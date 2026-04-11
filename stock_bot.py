@@ -44,5 +44,8 @@ def send_msg(text):
     requests.post(url, data={"chat_id": CHAT_ID, "text": text})
 
 if __name__ == "__main__":
+    print("스크립트 시작")
     message = get_stocks()
+    print(f"메시지: {message}")
     send_msg(message)
+    print("전송 완료")
