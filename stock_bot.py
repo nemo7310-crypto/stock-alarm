@@ -39,7 +39,8 @@ def send_msg(text):
     if not TELEGRAM_TOKEN or not CHAT_ID:
         print("설정된 토큰이나 ID가 없습니다. Secrets 설정을 확인하세요.")
         return
-    url = f"https://telegram.org{TELEGRAM_TOKEN}/sendMessage"
+    url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
+
     requests.post(url, data={"chat_id": CHAT_ID, "text": text})
 
 if __name__ == "__main__":
