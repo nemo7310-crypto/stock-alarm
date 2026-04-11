@@ -1,0 +1,28 @@
+name: Stock Alarm Bot
+
+on:
+  schedule:
+    # 한국 시간 기준 평일(월-금) 오후 3시 45분 실행 (UTC 기준 6시 45분)
+    - cron: '45 6 * * 1-5'
+  workflow_dispatch:      # 수동으로 즉시 실행해볼 수 있는 버튼 생성
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Install libraries
+        run: pip install pykrx requests
+
+      - name: Run script
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          CHAT_ID: ${{ secrets.CHAT_ID }}
+        run: python stock_bot.py
