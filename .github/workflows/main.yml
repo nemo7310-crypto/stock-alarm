@@ -1,7 +1,7 @@
 name: Stock Alarm Bot
 on:
   schedule:
-    - cron: '45 6 * * 1-5'
+    - cron: '30 7 * * 1-5'
   workflow_dispatch:
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
