@@ -16,7 +16,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Install libraries
-        run: pip install pykrx requests
+       run: pip install finance-datareader requests
       - name: Run script
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
