@@ -4,7 +4,7 @@ import requests
 import FinanceDataReader as fdr
 
 # 깃허브 Secrets에서 가져오기
-TELEGRAM_TOKEN = os.environ.get('TELEGRAM_TOKEN')
+TELEGRAM_TOKEN = os.environ.get('8784280975:AAEWGbdmAoBuq_8eYO1MoBxLE0Usnr_ANxU')
 CHAT_ID        = os.environ.get('CHAT_ID')
 
 # 스크리닝 조건
